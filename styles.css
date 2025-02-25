@@ -101,6 +101,21 @@ header {
     text-align: center;
 }
 
+.jobs {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.jobs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.jobs li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
 .service {
     margin-bottom: 2rem;
 }
@@ -124,7 +139,7 @@ footer {
         display: none;
         flex-direction: column;
         gap: 0;
-        background-color: #333;
+        background-color: rgba(51, 51, 51, 0.9);
         position: absolute;
         top: 60px;
         right: 0;
@@ -132,15 +147,15 @@ footer {
         text-align: center;
     }
 
+    .nav-links.active {
+        display: flex;
+    }
+
     .nav-links li {
         margin: 1rem 0;
     }
 
     .menu-toggle {
-        display: flex;
-    }
-
-    .menu-toggle.active + .nav-links {
         display: flex;
     }
 
@@ -161,7 +176,7 @@ footer {
         font-size: 0.875rem;
     }
 
-    .about, .services, .contact {
+    .about, .services, .contact, .jobs {
         padding: 1rem 0.5rem;
     }
 }
