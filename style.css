@@ -1,0 +1,72 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark tech */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #00ffcc; /* toque tecnológico */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Proyectos */
+.project-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #888;
+}
