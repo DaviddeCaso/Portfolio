@@ -49,13 +49,30 @@ section {
 }
 
 /* Proyectos */
+
 .project-card {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin: 0px 100px 30px 100px;
+    min-height: 300px;
     transition: transform 0.2s;
+    border: 2px solid #00ffcc;
+
+    display: flex;          
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center; 
+    justify-content: center;    
 }
+
+.project-img {
+    max-width: 100%;    
+    height: auto;        
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
 
 .project-card:hover {
     transform: scale(1.05);
