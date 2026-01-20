@@ -72,6 +72,20 @@ section {
     max-width: 900px;
     margin: 0 auto;
 }
+/* About */
+
+#about p {
+    max-width: 700px;
+    margin: 15px auto;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.about-fun {
+    color: #00ffcc;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
 
 /* Proyectos */
 
