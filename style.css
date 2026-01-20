@@ -179,6 +179,23 @@ section {
     }
 }
 
+/* Contact */
+
+.contact-email {
+    margin-top: 20px;
+    color: #00ffcc;
+    font-size: 0.95rem;
+}
+
+.contact-email a {
+    color: #00ffcc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+    color: #fff;
+}
 /* Footer */
 footer {
     background-color: #1f1f1f;
