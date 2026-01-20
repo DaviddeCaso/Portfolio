@@ -196,6 +196,23 @@ section {
 .contact-email a:hover {
     color: #fff;
 }
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contact-toast {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    font-weight: bold;
+}
 /* Footer */
 footer {
     background-color: #1f1f1f;

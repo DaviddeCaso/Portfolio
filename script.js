@@ -68,3 +68,52 @@ function randomPosition() {
 
     return positions[Math.floor(Math.random() * positions.length)];
 }
+
+
+/* Validación de contacto */
+
+const faders = document.querySelectorAll('.fade-in-section');
+
+const appearOptions = {
+    threshold: 0.2,
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+/* Toast de contacto */
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!contactForm.name.value || !contactForm.email.value || !contactForm.message.value) {
+        contactToast.textContent = "Por favor completa todos los campos ⚠️";
+        contactToast.classList.add('show');
+        contactToast.classList.remove('hidden');
+        setTimeout(() => {
+            contactToast.classList.remove('show');
+            contactToast.classList.add('hidden');
+        }, 3000);
+        return;
+    }
+
+    contactToast.textContent = "Mensaje enviado con éxito 🚀";
+    contactToast.classList.add('show');
+    contactToast.classList.remove('hidden');
+
+    setTimeout(() => {
+        contactToast.classList.remove('show');
+        contactToast.classList.add('hidden');
+    }, 3000);
+
+    contactForm.reset();
+});
