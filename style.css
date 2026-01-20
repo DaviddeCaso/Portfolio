@@ -87,3 +87,21 @@ footer {
     font-size: 0.9rem;
     color: #888;
 }
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: invert(75%) sepia(20%) saturate(500%) hue-rotate(160deg);
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
