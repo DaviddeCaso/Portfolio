@@ -12,6 +12,58 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
+    position: relative;
+}
+
+/* =========================
+   GLOW LATERAL (SUAVE Y DIFUMINADO)
+========================= */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: -20%;
+    width: 260px;
+    height: 140%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+body::before {
+    left: -120px;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 255, 204, 0.18),
+        rgba(0, 255, 204, 0.10),
+        rgba(0, 255, 204, 0.04),
+        transparent
+    );
+}
+
+body::after {
+    right: -120px;
+    background: linear-gradient(
+        -90deg,
+        rgba(0, 255, 204, 0.18),
+        rgba(0, 255, 204, 0.10),
+        rgba(0, 255, 204, 0.04),
+        transparent
+    );
+}
+
+/* =========================
+   CAPAS (Z-INDEX)
+========================= */
+header,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    position: relative;
+    z-index: 1;
 }
 
 /* =========================
@@ -96,12 +148,6 @@ section h2 {
     text-align: center;
 }
 
-.about-joke {
-    color: rgba(255, 255, 255, 0.317);
-    font-size: 1.1rem;
-    opacity: 0.8;
-}
-
 .about-fun {
     color: #00ffcc;
     font-size: 0.9rem;
@@ -142,7 +188,6 @@ section h2 {
     border-color: rgba(0, 255, 204, 0.4);
 }
 
-/* Imagen proyecto */
 .project-img-wrapper {
     position: relative;
     width: 100%;
@@ -159,7 +204,6 @@ section h2 {
     padding: 12px;
 }
 
-/* Overlay CTA */
 .overlay {
     position: absolute;
     inset: 0;
@@ -198,12 +242,14 @@ section h2 {
 }
 
 /* =========================
-   CONTACT
+   CONTACT (LAYOUT PRO)
 ========================= */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* más aire general */
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-row {
@@ -218,28 +264,41 @@ section h2 {
 .contact-message {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.contact-message textarea {
+/* Inputs & textarea */
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #777;
+}
+
+.contact-form textarea {
     height: 140px;
     resize: none;
 }
 
-.contact-message button {
-    align-self: center;
-}
-
+/* Botón centrado y más grande */
 .contact-form button {
-    margin-top: 10px;
-    padding: 14px 36px;
+    align-self: center;
+    padding: 14px 40px;
     font-size: 1rem;
     font-weight: bold;
 
     background-color: #00ffcc;
     color: #121212;
     border: none;
-    border-radius: 999px; /* botón pill */
+    border-radius: 999px;
 
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -254,32 +313,24 @@ section h2 {
     transform: translateY(0);
 }
 
-.contact-message textarea {
-    border: 1px solid rgba(0, 255, 204, 0.2);
-}
-
-.contact-message textarea:focus {
-    border-color: #00ffcc;
-}
+/* Email directo */
 .contact-email {
-    margin-top: 20px;
+    margin-top: 25px;
     color: #00ffcc;
     font-size: 0.95rem;
     text-align: center;
 }
 
-
 .contact-email a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .contact-email a:hover {
     color: #fff;
 }
 
-/* Fade-in animation */
+/* Fade-in */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
