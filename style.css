@@ -99,6 +99,17 @@ nav a {
 nav a:hover {
     opacity: 0.8;
 }
+/* =====================================================
+   HERO-SUBTÍTULO
+===================================================== */
+
+.hero-subtitle {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #bdbdbd;
+    letter-spacing: 0.3px;
+}
+
 
 /* =====================================================
    EASTER EGG
