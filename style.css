@@ -31,23 +31,19 @@ body::after {
 }
 
 body::before {
-    left: -120px;
+    left: -100px;
     background: linear-gradient(
-        90deg,
-        rgba(0, 255, 204, 0.18),
-        rgba(0, 255, 204, 0.10),
-        rgba(0, 255, 204, 0.04),
+        60deg,
+        rgba(0, 255, 204, 0.12),
         transparent
     );
 }
 
 body::after {
-    right: -120px;
+    right: -100px;
     background: linear-gradient(
-        -90deg,
-        rgba(0, 255, 204, 0.18),
-        rgba(0, 255, 204, 0.10),
-        rgba(0, 255, 204, 0.04),
+        -60deg,
+        rgba(0, 255, 204, 0.12),
         transparent
     );
 }
