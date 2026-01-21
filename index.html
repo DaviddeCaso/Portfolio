@@ -3,138 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Dev</title>
+    <meta name="description" content="Portfolio de David de Caso, desarrollador frontend con estilo dark-tech y enfoque en UX.">
+    <title>Portfolio | David de Caso</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+    <header class="site-header">
         <h1>
             Hola, soy 
             <span id="myName" class="easter-egg">David de Caso</span>
         </h1>
-        <nav>
+
+        <nav aria-label="Navegación principal">
             <ul>
-                <li><a href="about">Sobre mí</a></li>
-                <li><a href="projects">Proyectos</a></li>
-                <li><a href="contact">Contacto</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h1>Sobre mí</h2>
-        <br><p>Desarrollador Jr.  |  Amante de la programación y los chistes malos.</p><br>
-        <p>Me centro en crear interfaces claras, código mantenible y experiencias 
-           que se quede grabadas.  <p class="about-fun">Para bien, espero.</p> 
-        <p>  Me gusta entender el problema antes de escribir la primera línea de código.
-        </p>
-        
-    </p>
-    </section>
+    <main>
+        <!-- SOBRE MÍ -->
+        <section id="about">
+            <h2>Sobre mí</h2>
 
-    <section id="projects">
-        <h1>Proyectos</h1>
-        <br>
-         <div class="projects-grid">
-        <article class="project-card">
-            <div class="project-img-wrapper" onclick="window.open('https://link-al-proyecto.com', '_blank')">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
-                </div>
-            </div>
-            <h3>La Torrijería</h3>
-            <p>Mailing de promoción proponiendo una marca inventada con modelos 
-                responsive usando HTML y CSS para crear una imágen de marca atractiva y llamativa.<br>
-                Acércate a conocer a nuestra mascota <b>Torry</b>!
+            <p>
+                Desarrollador Jr. | Amante de la programación y los chistes malos.
             </p>
-        </article>
-        <article class="project-card" onclick="window.open('https://link-al-proyecto.com', '_blank')">
-            <div class="project-img-wrapper">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
-                </div>
+
+            <p>
+                Me centro en crear interfaces claras, código mantenible y experiencias 
+                que se queden grabadas.
+                <span class="about-joke">Para bien, espero.</span>
+            </p>
+
+            <p>
+                Me gusta entender el problema antes de escribir la primera línea de código.
+            </p>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="projects">
+            <h2>Proyectos</h2>
+
+            <div class="projects-grid">
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img 
+                            src="images/proyecto1.png"
+                            alt="Proyecto La Torrijería"
+                            class="project-img"
+                            loading="lazy"
+                        >
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>La Torrijería</h3>
+                    <p>
+                        Mailing de promoción para una marca ficticia, con diseño responsive en HTML y CSS.
+                        Conoce a nuestra mascota <strong>Torry</strong>.
+                    </p>
+                </article>
+
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img src="images/proyecto1.png" alt="Proyecto 2" class="project-img" loading="lazy">
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>Proyecto 2</h3>
+                    <p>Dashboard oscuro para humanos nocturnos 🌙</p>
+                </article>
+
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img src="images/proyecto1.png" alt="Proyecto 3" class="project-img" loading="lazy">
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>Proyecto 3</h3>
+                    <p>Experimento tech con demasiadas ideas 🤖</p>
+                </article>
+
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img src="images/proyecto1.png" alt="Proyecto 4" class="project-img" loading="lazy">
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>Proyecto 4</h3>
+                    <p>Landing minimalista con alma tech ⚡</p>
+                </article>
+
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img src="images/proyecto1.png" alt="Proyecto 5" class="project-img" loading="lazy">
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>Proyecto 5</h3>
+                    <p>Aplicación pensada para no molestar al usuario 🧘</p>
+                </article>
+
+                <article class="project-card" data-url="https://link-al-proyecto.com">
+                    <div class="project-img-wrapper">
+                        <img src="images/proyecto1.png" alt="Proyecto 6" class="project-img" loading="lazy">
+                        <div class="overlay">
+                            <span class="cta-text">Ver proyecto</span>
+                        </div>
+                    </div>
+                    <h3>Proyecto 6</h3>
+                    <p>Experimento visual con demasiadas variables 🔬</p>
+                </article>
             </div>
-            <h3>Proyecto 2</h3>
-            <p>Dashboard oscuro para humanos nocturnos 🌙</p>
-        </article>
+        </section>
 
-        <article class="project-card" onclick="window.open('https://link-al-proyecto.com', '_blank')">
-            <div class="project-img-wrapper">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
+        <!-- CONTACTO -->
+        <section id="contact" class="fade-in-section">
+            <h2>Contacto</h2>
+
+            <p>
+                Si quieres hablar de proyectos, ideas o simplemente enviar un saludo 👋,
+                puedes escribirme aquí:
+            </p>
+
+           <form class="contact-form">
+                <div class="contact-row">
+                    <input type="text" name="name" placeholder="Nombre" />
+                    <input type="email" name="email" placeholder="Email" />
                 </div>
-            </div>
-            <h3>Proyecto 3</h3>
-            <p>Experimento tech con demasiadas ideas 🤖</p>
-        </article>
-        <article class="project-card" onclick="window.open('https://link-al-proyecto.com', '_blank')">
-            <div class="project-img-wrapper">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
+
+                <div class="contact-message">
+                    <textarea name="message" placeholder="Mensaje"></textarea>
+                    <button type="submit">Enviar</button>
                 </div>
-            </div>
-            <h3>Proyecto 4</h3>
-            <p>Landing minimalista con alma tech ⚡</p>
-        </article>
+            </form>
 
-        <article class="project-card" onclick="window.open('https://link-al-proyecto.com', '_blank')">
-            <div class="project-img-wrapper">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
-                </div>
-            </div>
-            <h3>Proyecto 5</h3>
-            <p>Aplicación pensada para no molestar al usuario 🧘</p>
-        </article>
-
-        <article class="project-card">
-            <div class="project-img-wrapper">
-            <img src="images/proyecto1.png" alt="La Torrijería" class="project-img">
-                <div class="overlay">
-                    <span class="cta-text">Ver proyecto</span>
-                </div>
-            </div>
-            <h3>Proyecto 6</h3>
-            <p>Experimento visual con demasiadas variables 🔬</p>
-        </article>
-        </div>
-    </section>
-
-    <section id="contact" class="fade-in-section">
-    <h2>Contacto</h2>
-    <p>Si quieres hablar de proyectos, ideas o simplemente enviar un saludo 👋, puedes escribirme aquí:</p>
-
-    <form class="contact-form" class="fade-in-section">
-        <input type="text" name="name"  placeholder="Tu nombre" required>
-        <input type="email" name="email"  placeholder="Tu email" required>
-        <input name="message"  placeholder="Tu mensaje" required></input>
-        <button type="submit">Enviar</button>
-    </form>
-
-    <p class="contact-email" class="fade-in-section">
-        O escríbeme directamente a: <a href="mailto:david.ddcg@gmail.com">david.ddcg@gmail.com</a>
-    </p>
-</section>
+            <p class="contact-email fade-in-section">
+                O escríbeme directamente a:
+                <a href="mailto:david.ddcg@gmail.com">david.ddcg@gmail.com</a>
+            </p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 DavidDeCaso. Hecho con ❤️ y ☕</p>
+        <p>&copy; 2026 David de Caso. Hecho con ❤️ y ☕</p>
+
         <div class="social-icons">
-    <a href="https://github.com/DaviddeCaso" target="_blank">
-        <img src="images/github-icon.png" alt="GitHub">
-    </a>
-    <a href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/" target="_blank">
-        <img src="images/linkedin-icon.png" alt="LinkedIn">
-    </a>
-</div>
+            <a href="https://github.com/DaviddeCaso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src="images/github-icon.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="images/linkedin-icon.png" alt="LinkedIn">
+            </a>
+        </div>
     </footer>
- <div id="easter-toast" class="toast hidden"></div>
- <div id="contact-toast" class="toast hidden"></div>
+
+    <!-- Toasts -->
+    <div id="easter-toast" class="toast hidden"></div>
+    <div id="contact-toast" class="toast hidden"></div>
+
     <script src="script.js"></script>
-   
 </body>
 </html>

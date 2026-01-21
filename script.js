@@ -1,63 +1,28 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
 const nameElement = document.getElementById("myName");
-const toast = document.getElementById("easter-toast");
+const easterToast = document.getElementById("easter-toast");
+const contactToast = document.getElementById("contact-toast");
+const contactForm = document.querySelector(".contact-form");
+const projectCards = document.querySelectorAll(".project-card");
 
-let counter = sessionStorage.getItem("easterEggCount") || 0;
+let counter = Number(sessionStorage.getItem("easterEggCount")) || 0;
 
-const messages = [
-    "Este programador parece funciona con café ☕",
+/* =========================
+   MENSAJES
+========================= */
+const easterMessages = [
+    "Este programador funciona con café ☕",
     "Código limpio, mente sana 🧠",
     "Si algo funciona, no lo toques 😌",
     "Deploy en viernes: mala idea 🚨",
     "Has encontrado un easter egg 🥚"
 ];
 
-function showToast(message) {
-    const position = randomPosition();
-
-    Object.assign(toast.style, position);
-
-    toast.textContent = message;
-    toast.classList.add("show");
-    toast.classList.remove("hidden");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-        toast.classList.add("hidden");
-    }, 3000);
-}
-
-function triggerEasterEgg(origin = "click") {
-    counter++;
-    sessionStorage.setItem("easterEggCount", counter);
-
-    const randomMessage =
-        messages[Math.floor(Math.random() * messages.length)];
-
-    showToast(randomMessage);
-
-    console.log(
-    `%c🥚 Easter Egg activado (${origin})`,
-    "color:#00ffcc; font-size:14px; font-weight:bold;"
-    );
-    console.log(
-    `%cVeces encontrado en esta sesión: ${counter}`,
-    "color:#888;"
-    );
-
-}
-
-/* CLICK */
-nameElement.addEventListener("click", () => {
-    triggerEasterEgg("click");
-});
-
-/* TECLAS SECRETAS → CTRL + SHIFT + E */
-document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
-        triggerEasterEgg("keyboard");
-    }
-});
-
+/* =========================
+   UTILIDADES
+========================= */
 function randomPosition() {
     const positions = [
         { bottom: "30px", right: "30px", top: "auto", left: "auto" },
@@ -65,55 +30,98 @@ function randomPosition() {
         { top: "30px", right: "30px", bottom: "auto", left: "auto" },
         { top: "30px", left: "30px", bottom: "auto", right: "auto" }
     ];
-
     return positions[Math.floor(Math.random() * positions.length)];
 }
 
+function showToast(toastEl, message, randomizePosition = false) {
+    if (randomizePosition) {
+        Object.assign(toastEl.style, randomPosition());
+    }
 
-/* Validación de contacto */
+    toastEl.textContent = message;
+    toastEl.classList.add("show");
+    toastEl.classList.remove("hidden");
 
-const faders = document.querySelectorAll('.fade-in-section');
+    setTimeout(() => {
+        toastEl.classList.remove("show");
+        toastEl.classList.add("hidden");
+    }, 4000);
+}
 
-const appearOptions = {
-    threshold: 0.2,
-};
+/* =========================
+   EASTER EGG
+========================= */
+function triggerEasterEgg(origin = "click") {
+    counter++;
+    sessionStorage.setItem("easterEggCount", counter);
 
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
+    const message =
+        easterMessages[Math.floor(Math.random() * easterMessages.length)];
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
+    showToast(easterToast, message, true);
+
+    console.log(
+        `%c🥚 Easter Egg activado (${origin})`,
+        "color:#00ffcc; font-size:14px; font-weight:bold;"
+    );
+    console.log(
+        `%cVeces encontrado en esta sesión: ${counter}`,
+        "color:#888;"
+    );
+}
+
+/* Eventos Easter Egg */
+nameElement?.addEventListener("click", () => triggerEasterEgg("click"));
+
+document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "e") {
+        triggerEasterEgg("keyboard");
+    }
 });
 
-/* Toast de contacto */
+/* =========================
+   PROJECTS (CARDS CLICABLES)
+========================= */
+projectCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const url = card.dataset.url;
+        if (url) {
+            window.open(url, "_blank");
+        }
+    });
+});
 
-contactForm.addEventListener('submit', function(e) {
+/* =========================
+   CONTACT FORM
+========================= */
+contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-    
-    if (!contactForm.name.value || !contactForm.email.value || !contactForm.message.value) {
-        contactToast.textContent = "Por favor completa todos los campos ⚠️";
-        contactToast.classList.add('show');
-        contactToast.classList.remove('hidden');
-        setTimeout(() => {
-            contactToast.classList.remove('show');
-            contactToast.classList.add('hidden');
-        }, 3000);
+
+    const { name, email, message } = contactForm;
+
+    if (!name.value || !email.value || !message.value) {
+        showToast(contactToast, "Por favor completa todos los campos ⚠️");
         return;
     }
 
-    contactToast.textContent = "Mensaje enviado con éxito 🚀";
-    contactToast.classList.add('show');
-    contactToast.classList.remove('hidden');
-
-    setTimeout(() => {
-        contactToast.classList.remove('show');
-        contactToast.classList.add('hidden');
-    }, 3000);
-
+    showToast(contactToast, "Mensaje enviado con éxito 🚀");
     contactForm.reset();
 });
+
+/* =========================
+   FADE-IN ON SCROLL
+========================= */
+const faders = document.querySelectorAll(".fade-in-section");
+
+const appearObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        });
+    },
+    { threshold: 0.2 }
+);
+
+faders.forEach(el => appearObserver.observe(el));
