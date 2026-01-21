@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de David de Caso, desarrollador frontend con estilo dark-tech y enfoque en UX.">
+    <meta
+        name="description"
+        content="Portfolio de David de Caso, desarrollador frontend con estilo dark-tech y enfoque en UX."
+    >
+
     <title>Portfolio | David de Caso</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="site-header">
         <h1>
-            Hola, soy 
+            Hola, soy
             <span id="myName" class="easter-egg">David de Caso</span>
         </h1>
 
@@ -35,7 +40,7 @@
             </p>
 
             <p>
-                Me centro en crear interfaces claras, código mantenible y experiencias 
+                Me centro en crear interfaces claras, código mantenible y experiencias
                 que se queden grabadas.
                 <span class="about-joke">Para bien, espero.</span>
             </p>
@@ -50,9 +55,10 @@
             <h2>Proyectos</h2>
 
             <div class="projects-grid">
+                <!-- Proyecto terminado -->
                 <article class="project-card" data-url="https://link-al-proyecto.com">
                     <div class="project-img-wrapper">
-                        <img 
+                        <img
                             src="images/proyecto1.png"
                             alt="Proyecto La Torrijería"
                             class="project-img"
@@ -62,10 +68,36 @@
                             <span class="cta-text">Ver proyecto</span>
                         </div>
                     </div>
+
                     <h3>La Torrijería</h3>
+
                     <p>
                         Mailing de promoción para una marca ficticia, con diseño responsive en HTML y CSS.
                         Conoce a nuestra mascota <strong>Torry</strong>.
+                    </p>
+                </article>
+
+                <!-- Proyectos en progreso -->
+                <article class="project-card in-progress">
+                    <div class="project-status">
+                        <span>En progreso</span>
+                    </div>
+
+                    <div class="project-img-wrapper">
+                        <img
+                            src="images/proyecto2.png"
+                            alt="Atlas of Hyrule"
+                            class="project-img"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <h3>Atlas of Hyrule</h3>
+
+                    <p>
+                        Web interactiva inspirada en un universo de fantasía, diseñada como un compendio
+                        visual de personajes, regiones y objetos.
+                        El proyecto se centra en la estructura de componentes, estados y experiencia de usuario.
                     </p>
                 </article>
 
@@ -73,60 +105,88 @@
                     <div class="project-status">
                         <span>En progreso</span>
                     </div>
-                    <div class="project-img-wrapper">
-                        <img src="images/proyecto2.png" alt="Atlas of Hyrule" class="project-img" loading="lazy">
-                    </div>
-                    <h3>Atlas of Hyrule</h3>
-                    <p>Web interactiva inspirada en el universo de The Legend of Zelda, diseñada como un compendio visual de personajes, regiones y objetos.
-El proyecto se centra en la estructura de componentes, estados y experiencia de usuario, priorizando una navegación clara y atractiva.</p>
-                </article>
 
-                <article class="project-card in-progress">
-                    <div class="project-status">
-                        <span>En progreso</span>
-                    </div>
                     <div class="project-img-wrapper">
-                        <img src="images/proyecto3.png" alt="Orbit Studio" class="project-img" loading="lazy">
+                        <img
+                            src="images/proyecto3.png"
+                            alt="Orbit Studio"
+                            class="project-img"
+                            loading="lazy"
+                        >
                     </div>
+
                     <h3>Orbit Studio</h3>
-                    <p>Web corporativa para un estudio creativo enfocado a soluciones digitales para pequeñas y medianas empresas.
-Diseñada con un enfoque profesional, accesible y orientado a negocio, cuidando tanto la experiencia de usuario como la estructura del contenido.</p>
+
+                    <p>
+                        Web corporativa para un estudio creativo enfocado a soluciones digitales para pequeñas
+                        y medianas empresas, con un diseño profesional y orientado a negocio.
+                    </p>
                 </article>
 
                 <article class="project-card in-progress">
                     <div class="project-status">
                         <span>En progreso</span>
                     </div>
+
                     <div class="project-img-wrapper">
-                        <img src="images/proyecto4.png" alt="Reflex Test" class="project-img" loading="lazy">
+                        <img
+                            src="images/proyecto4.png"
+                            alt="Reflex Test"
+                            class="project-img"
+                            loading="lazy"
+                        >
                     </div>
+
                     <h3>Reflex Test</h3>
-                    <p>Minijuego web centrado en la rapidez de reacción y la gestión de estados.
-Un proyecto ligero que sirve para explorar lógica en JavaScript, eventos, feedback visual y control del flujo del juego.</p>
+
+                    <p>
+                        Minijuego web centrado en la rapidez de reacción y la gestión de estados,
+                        explorando lógica en JavaScript, eventos y feedback visual.
+                    </p>
                 </article>
 
                 <article class="project-card in-progress">
                     <div class="project-status">
                         <span>En progreso</span>
                     </div>
+
                     <div class="project-img-wrapper">
-                        <img src="images/proyecto5.png" alt="OrderFlow" class="project-img" loading="lazy">
+                        <img
+                            src="images/proyecto5.png"
+                            alt="OrderFlow"
+                            class="project-img"
+                            loading="lazy"
+                        >
                     </div>
+
                     <h3>OrderFlow</h3>
-                    <p>Simulación de un sistema básico de gestión de pedidos y clientes, enfocado en el uso práctico de bases de datos SQL.
-El proyecto pone el foco en consultas, relaciones entre datos y casos reales de negocio.</p>
+
+                    <p>
+                        Simulación de un sistema de gestión de pedidos y clientes, enfocado en el uso práctico
+                        de bases de datos SQL y relaciones entre datos.
+                    </p>
                 </article>
 
                 <article class="project-card in-progress">
                     <div class="project-status">
                         <span>En progreso</span>
                     </div>
+
                     <div class="project-img-wrapper">
-                        <img src="images/proyecto6.png" alt="LeadTrack CRM" class="project-img" loading="lazy">
+                        <img
+                            src="images/proyecto6.png"
+                            alt="LeadTrack CRM"
+                            class="project-img"
+                            loading="lazy"
+                        >
                     </div>
+
                     <h3>LeadTrack CRM</h3>
-                    <p>Proyecto orientado a la gestión de leads y procesos comerciales dentro del ecosistema Salesforce.
-                    Pensado para comprender la estructura de datos, automatizaciones y flujos habituales en entornos empresariales reales.</p>
+
+                    <p>
+                        Proyecto orientado a la gestión de leads y procesos comerciales dentro del ecosistema
+                        Salesforce, centrado en datos y automatizaciones.
+                    </p>
                 </article>
             </div>
         </section>
@@ -140,14 +200,14 @@ El proyecto pone el foco en consultas, relaciones entre datos y casos reales de 
                 puedes escribirme aquí:
             </p>
 
-           <form class="contact-form">
+            <form class="contact-form">
                 <div class="contact-row">
-                    <input type="text" name="name" placeholder="Nombre" />
-                    <input type="email" name="email" placeholder="Email" />
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
 
                 <div class="contact-message">
-                    <textarea name="message" placeholder="Mensaje"></textarea>
+                    <textarea name="message" placeholder="Mensaje" required></textarea>
                     <button type="submit">Enviar</button>
                 </div>
             </form>
@@ -159,14 +219,26 @@ El proyecto pone el foco en consultas, relaciones entre datos y casos reales de 
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 David de Caso. Hecho con ❤️ y ☕</p>
 
         <div class="social-icons">
-            <a href="https://github.com/DaviddeCaso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a
+                href="https://github.com/DaviddeCaso"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
                 <img src="images/github-icon.png" alt="GitHub">
             </a>
-            <a href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+            <a
+                href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+            >
                 <img src="images/linkedin-icon.png" alt="LinkedIn">
             </a>
         </div>

@@ -1,17 +1,26 @@
-/* =========================
-   VARIABLES GLOBALES
-========================= */
+/* =====================================================
+   ELEMENTOS DEL DOM
+===================================================== */
+
 const nameElement = document.getElementById("myName");
 const easterToast = document.getElementById("easter-toast");
 const contactToast = document.getElementById("contact-toast");
 const contactForm = document.querySelector(".contact-form");
-const projectCards = document.querySelectorAll(".project-card");
+const projectImages = document.querySelectorAll(
+    ".project-card:not(.in-progress) .project-img-wrapper"
+);
 
-let counter = Number(sessionStorage.getItem("easterEggCount")) || 0;
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
 
-/* =========================
+const TOAST_DURATION = 4000;
+let easterCounter = Number(sessionStorage.getItem("easterEggCount")) || 0;
+
+/* =====================================================
    MENSAJES
-========================= */
+===================================================== */
+
 const easterMessages = [
     "Este programador funciona con café ☕",
     "Código limpio, mente sana 🧠",
@@ -20,40 +29,47 @@ const easterMessages = [
     "Has encontrado un easter egg 🥚"
 ];
 
-/* =========================
+/* =====================================================
    UTILIDADES
-========================= */
-function randomPosition() {
+===================================================== */
+
+function getRandomPosition() {
     const positions = [
         { bottom: "30px", right: "30px", top: "auto", left: "auto" },
         { bottom: "30px", left: "30px", top: "auto", right: "auto" },
         { top: "30px", right: "30px", bottom: "auto", left: "auto" },
         { top: "30px", left: "30px", bottom: "auto", right: "auto" }
     ];
+
     return positions[Math.floor(Math.random() * positions.length)];
 }
 
 function showToast(toastEl, message, randomizePosition = false) {
+    if (!toastEl) return;
+
     if (randomizePosition) {
-        Object.assign(toastEl.style, randomPosition());
+        Object.assign(toastEl.style, getRandomPosition());
     }
 
     toastEl.textContent = message;
     toastEl.classList.add("show");
     toastEl.classList.remove("hidden");
 
-    setTimeout(() => {
+    clearTimeout(toastEl._timeout);
+
+    toastEl._timeout = setTimeout(() => {
         toastEl.classList.remove("show");
         toastEl.classList.add("hidden");
-    }, 4000);
+    }, TOAST_DURATION);
 }
 
-/* =========================
+/* =====================================================
    EASTER EGG
-========================= */
+===================================================== */
+
 function triggerEasterEgg(origin = "click") {
-    counter++;
-    sessionStorage.setItem("easterEggCount", counter);
+    easterCounter++;
+    sessionStorage.setItem("easterEggCount", easterCounter);
 
     const message =
         easterMessages[Math.floor(Math.random() * easterMessages.length)];
@@ -65,12 +81,12 @@ function triggerEasterEgg(origin = "click") {
         "color:#00ffcc; font-size:14px; font-weight:bold;"
     );
     console.log(
-        `%cVeces encontrado en esta sesión: ${counter}`,
+        `%cVeces encontrado en esta sesión: ${easterCounter}`,
         "color:#888;"
     );
 }
 
-/* Eventos Easter Egg */
+/* Eventos */
 nameElement?.addEventListener("click", () => triggerEasterEgg("click"));
 
 document.addEventListener("keydown", (e) => {
@@ -79,21 +95,29 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-/* =========================
-   PROJECTS (CARDS CLICABLES)
-========================= */
-projectCards.forEach(card => {
-    card.addEventListener("click", () => {
-        const url = card.dataset.url;
+/* =====================================================
+   PROJECTS (IMÁGENES CLICABLES)
+===================================================== */
+
+projectImages.forEach(wrapper => {
+    wrapper.addEventListener("click", () => {
+        const card = wrapper.closest(".project-card");
+        const url = card?.dataset.url;
+
         if (url) {
-            window.open(url, "_blank");
+            window.open(url, "_blank", "noopener");
         }
     });
 });
 
-/* =========================
+/* =====================================================
    CONTACT FORM
-========================= */
+===================================================== */
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -104,13 +128,19 @@ contactForm?.addEventListener("submit", (e) => {
         return;
     }
 
+    if (!isValidEmail(email.value)) {
+        showToast(contactToast, "Introduce un email válido 📧");
+        return;
+    }
+
     showToast(contactToast, "Mensaje enviado con éxito 🚀");
     contactForm.reset();
 });
 
-/* =========================
+/* =====================================================
    FADE-IN ON SCROLL
-========================= */
+===================================================== */
+
 const faders = document.querySelectorAll(".fade-in-section");
 
 const appearObserver = new IntersectionObserver(
