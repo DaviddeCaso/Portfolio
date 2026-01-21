@@ -175,7 +175,6 @@ section h2 {
     align-items: center;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
-    cursor: pointer;
 
     transition: transform 0.3s ease,
                 box-shadow 0.3s ease,
@@ -195,6 +194,7 @@ section h2 {
     background-color: #0f0f0f;
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .project-img {
@@ -228,6 +228,51 @@ section h2 {
     text-shadow: 0 0 5px #00ffcc;
 }
 
+/* Espaciado títulos de proyectos */
+.project-card h3 {
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+
+/* Estado proyecto */
+.project-card {
+    position: relative;
+}
+
+.project-status {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(20, 20, 20, 0.75);
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+.project-status span {
+    color: #ccc;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid #555;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Proyectos en progreso: sin interacción */
+.project-card.in-progress .project-img-wrapper {
+    cursor: default;
+}
+
+.project-card.in-progress .overlay {
+    display: none;
+}
+
 /* Responsive grid */
 @media (min-width: 600px) {
     .projects-grid {
@@ -250,6 +295,11 @@ section h2 {
     gap: 25px;
     max-width: 600px;
     margin: 0 auto;
+}
+
+#contact > p {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .contact-row {
