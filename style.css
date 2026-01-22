@@ -179,6 +179,39 @@ nav a.active::after {
     }
 }
 
+@media (max-width: 1024px) {
+    .hero {
+        padding: 90px 40px 70px;
+        gap: 40px;
+    }
+
+    .hero-image img {
+        width: 240px; /* baja desde 300 */
+    }
+
+    .hero-text {
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 24px 60px;
+        gap: 32px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 200px;
+    }
+}
+
+
 /* =====================================================
    HERO SUBTÍTULO
 ===================================================== */
@@ -244,6 +277,72 @@ section {
     opacity: 1;
 }
 
+/* =========================
+   STACK 
+========================= */
+
+#stack {
+    padding: 80px 20px 60px;
+}
+
+#stack h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.stack-grid {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.stack-card {
+    background-color: #1a1a1a;
+    border-radius: 14px;
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stack-card h3 {
+    color: #00ffcc;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.stack-card p {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.stack-tools {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.stack-tools li {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    background-color: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+
+    border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+@media (min-width: 768px) {
+    .stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 /* =====================================================
    SECCIONES GENERALES
 ===================================================== */
