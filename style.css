@@ -14,7 +14,6 @@ body {
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
-    position: relative;
 }
 
 /* =====================================================
@@ -52,10 +51,14 @@ body::after {
 }
 
 /* =====================================================
-   CAPAS (Z-INDEX)
+   CAPAS (Z-INDEX) — FIX STICKY
 ===================================================== */
 
-header,
+.site-header {
+    position: relative;
+    z-index: 2;
+}
+
 footer {
     position: relative;
     z-index: 2;
@@ -91,16 +94,37 @@ nav ul {
 }
 
 nav a {
-    color: #00ffcc;
+    position: relative;
+    color: #9e9e9e;
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    font-size: 1.05rem;        
+    padding: 10px 6px;        
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    opacity: 0.8;
+    color: #ffffff;
 }
+
+/* Link activo */
+nav a.active {
+    color: #00ffcc;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;   /* un poco más abajo */
+    width: 100%;
+    height: 2px;
+    background-color: #00ffcc;
+    border-radius: 2px;
+}
+
+
 /* =====================================================
-   HERO-SUBTÍTULO
+   HERO SUBTÍTULO
 ===================================================== */
 
 .hero-subtitle {
@@ -110,6 +134,33 @@ nav a:hover {
     letter-spacing: 0.3px;
 }
 
+/* =========================
+   NAVEGACIÓN STICKY (ESTILO)
+========================= */
+
+.nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Contenido de la nav */
+.nav-wrapper nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 18px 20px; /* antes 12px */
+}
+
+
+/* Evita que las secciones queden tapadas por la nav */
+section {
+    scroll-margin-top: 110px;
+}
 
 /* =====================================================
    EASTER EGG
@@ -160,6 +211,7 @@ section h2 {
     max-width: 720px;
     margin: 18px auto;
     line-height: 1.7;
+    text-align: center;
 }
 
 .about-fun {
@@ -168,7 +220,6 @@ section h2 {
     font-size: 0.9rem;
     color: #9e9e9e;
     font-style: italic;
-    text-align: center;
 }
 
 /* =====================================================

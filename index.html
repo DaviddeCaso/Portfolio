@@ -7,22 +7,28 @@
         name="description"
         content="Portfolio de David de Caso, desarrollador frontend con estilo dark-tech y enfoque en UX."
     >
-
     <title>Portfolio | David de Caso</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- HEADER -->
+    <!-- =====================================================
+         HEADER / IDENTIDAD
+    ====================================================== -->
     <header class="site-header">
         <h1>
-            <span id="myName" class="easter-egg">DAVID DE CASO</span>
+            <span id="myName" class="easter-egg">David de Caso</span>
         </h1>
+
         <p class="hero-subtitle">
             Frontend Developer · UI · UX · Arquitectura CSS
         </p>
+    </header>
 
+    <!-- =====================================================
+         NAVEGACIÓN STICKY
+    ====================================================== -->
+    <div class="nav-wrapper">
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="#about">Sobre mí</a></li>
@@ -30,29 +36,30 @@
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
 
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
     <main>
         <!-- SOBRE MÍ -->
         <section id="about">
             <h2>Sobre mí</h2>
+
             <p>
                 Frontend Developer con foco en crear interfaces claras, accesibles y fáciles de mantener.
                 Me interesa especialmente el equilibrio entre diseño, experiencia de usuario y código bien estructurado.
             </p>
+
             <p>
                 Trabajo principalmente con HTML, CSS y JavaScript, cuidando los detalles visuales y la coherencia
-                del proyecto a largo plazo. Me siento cómodo colaborando, entendiendo requisitos y transformándolos
-                en soluciones prácticas.
+                del proyecto a largo plazo.
             </p>
 
             <p>
                 Actualmente estoy ampliando mi perfil hacia entornos más orientados a negocio, como bases de datos SQL
                 y el ecosistema Salesforce, con el objetivo de evolucionar hacia soluciones digitales completas.
-                <br>
                 <span class="about-fun">Con especial atención a los pequeños detalles.</span>
-
-
             </p>
         </section>
 
@@ -90,20 +97,14 @@
                     </div>
 
                     <div class="project-img-wrapper">
-                        <img
-                            src="images/proyecto2.png"
-                            alt="Atlas of Hyrule"
-                            class="project-img"
-                            loading="lazy"
-                        >
+                        <img src="images/proyecto2.png" alt="Atlas of Hyrule" class="project-img" loading="lazy">
                     </div>
 
                     <h3>Atlas of Hyrule</h3>
 
                     <p>
-                        Web interactiva inspirada en un universo de fantasía, diseñada como un compendio
-                        visual de personajes, regiones y objetos.
-                        El proyecto se centra en la estructura de componentes, estados y experiencia de usuario.
+                        Web interactiva inspirada en un universo de fantasía, diseñada como un compendio visual
+                        de personajes, regiones y objetos.
                     </p>
                 </article>
 
@@ -113,12 +114,7 @@
                     </div>
 
                     <div class="project-img-wrapper">
-                        <img
-                            src="images/proyecto3.png"
-                            alt="Orbit Studio"
-                            class="project-img"
-                            loading="lazy"
-                        >
+                        <img src="images/proyecto3.png" alt="Orbit Studio" class="project-img" loading="lazy">
                     </div>
 
                     <h3>Orbit Studio</h3>
@@ -135,12 +131,7 @@
                     </div>
 
                     <div class="project-img-wrapper">
-                        <img
-                            src="images/proyecto4.png"
-                            alt="Reflex Test"
-                            class="project-img"
-                            loading="lazy"
-                        >
+                        <img src="images/proyecto4.png" alt="Reflex Test" class="project-img" loading="lazy">
                     </div>
 
                     <h3>Reflex Test</h3>
@@ -157,12 +148,7 @@
                     </div>
 
                     <div class="project-img-wrapper">
-                        <img
-                            src="images/proyecto5.png"
-                            alt="OrderFlow"
-                            class="project-img"
-                            loading="lazy"
-                        >
+                        <img src="images/proyecto5.png" alt="OrderFlow" class="project-img" loading="lazy">
                     </div>
 
                     <h3>OrderFlow</h3>
@@ -179,12 +165,7 @@
                     </div>
 
                     <div class="project-img-wrapper">
-                        <img
-                            src="images/proyecto6.png"
-                            alt="LeadTrack CRM"
-                            class="project-img"
-                            loading="lazy"
-                        >
+                        <img src="images/proyecto6.png" alt="LeadTrack CRM" class="project-img" loading="lazy">
                     </div>
 
                     <h3>LeadTrack CRM</h3>
@@ -225,32 +206,23 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
     <footer>
         <p>&copy; 2026 David de Caso. Hecho con ❤️ y ☕</p>
 
         <div class="social-icons">
-            <a
-                href="https://github.com/DaviddeCaso"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-            >
+            <a href="https://github.com/DaviddeCaso" target="_blank" rel="noopener noreferrer">
                 <img src="images/github-icon.png" alt="GitHub">
             </a>
-
-            <a
-                href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/in/david-de-caso-garc%C3%ADa/" target="_blank" rel="noopener noreferrer">
                 <img src="images/linkedin-icon.png" alt="LinkedIn">
             </a>
         </div>
     </footer>
 
-    <!-- Toasts -->
+    <!-- TOASTS -->
     <div id="easter-toast" class="toast hidden"></div>
     <div id="contact-toast" class="toast hidden"></div>
 

@@ -155,3 +155,32 @@ const appearObserver = new IntersectionObserver(
 );
 
 faders.forEach(el => appearObserver.observe(el));
+
+/* =========================
+   NAV ACTIVA SEGÚN SECCIÓN
+========================= */
+
+const sections = document.querySelectorAll("main section");
+const navLinks = document.querySelectorAll("nav a");
+
+const navObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const id = entry.target.getAttribute("id");
+
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === `#${id}`
+                );
+            });
+        });
+    },
+    {
+        threshold: 0.5
+    }
+);
+
+sections.forEach(section => navObserver.observe(section));
