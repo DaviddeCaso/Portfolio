@@ -70,6 +70,7 @@ section {
     z-index: 1;
 }
 
+
 /* =====================================================
    HEADER & NAV
 ===================================================== */
@@ -696,6 +697,9 @@ footer {
     position: fixed;
     bottom: 30px;
     right: 30px;
+
+    z-index: 5000; /* ← clave */
+
     background: #1a1a1a;
     color: #00ffcc;
     padding: 15px 20px;
@@ -703,10 +707,10 @@ footer {
     border: 1px solid #00ffcc;
     font-size: 0.9rem;
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 999;
 }
 
 .toast.show {
