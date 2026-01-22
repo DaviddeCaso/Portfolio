@@ -168,7 +168,7 @@ const navObserver = new IntersectionObserver(
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
 
-            const id = entry.target.getAttribute("id");
+            const id = entry.target.id;
 
             navLinks.forEach(link => {
                 link.classList.toggle(
@@ -179,8 +179,10 @@ const navObserver = new IntersectionObserver(
         });
     },
     {
-        threshold: 0.5
+        rootMargin: "-120px 0px -60% 0px",
+        threshold: 0
     }
 );
 
 sections.forEach(section => navObserver.observe(section));
+
