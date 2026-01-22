@@ -121,7 +121,63 @@ nav a.active::after {
     background-color: #00ffcc;
     border-radius: 2px;
 }
+/* =========================
+   HERO / PRESENTACIÓN
+========================= */
 
+.hero {
+    width: 100%;
+    padding: 200px 80px 200px; /* más padding lateral */
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* CLAVE */
+    gap: 200px;
+}
+
+
+
+.hero-text {
+    max-width: 520px; 
+}
+
+.hero-text h1 {
+    font-size: 2.8rem; /* antes 2.4rem */
+    line-height: 1.2;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+.hero-role {
+    font-size: 1.15rem;
+    color: #bdbdbd;
+    margin-bottom: 22px;
+}
+
+.hero-intro {
+    max-width: 520px;
+    font-size: 1.05rem;
+    color: #d0d0d0;
+    line-height: 1.75;
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width: 400px;
+    height: auto;
+    image-rendering: pixelated;
+    border-radius: 16px;
+}
+
+@media (min-width: 1400px) {
+    .hero {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
 
 /* =====================================================
    HERO SUBTÍTULO
