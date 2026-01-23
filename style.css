@@ -171,7 +171,15 @@ nav a.active::after {
     height: auto;
     image-rendering: pixelated;
     border-radius: 16px;
+
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#121212, #121212) padding-box,
+        linear-gradient(135deg, #00ffcc, rgba(0, 255, 204, 0.2)) border-box;
+
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.25);
 }
+
 
 @media (min-width: 1400px) {
     .hero {
