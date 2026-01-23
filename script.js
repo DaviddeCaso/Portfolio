@@ -94,6 +94,14 @@ document.addEventListener("keydown", (e) => {
         triggerEasterEgg("keyboard");
     }
 });
+/* =========================
+   HERO ANIMATION ON LOAD
+========================= */
+
+window.addEventListener("load", () => {
+    const hero = document.querySelector(".hero");
+    hero?.classList.add("animate");
+});
 
 /* =====================================================
    PROJECTS (IMÁGENES CLICABLES)

@@ -227,6 +227,45 @@ nav a.active::after {
     }
 }
 
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero-text,
+.hero-image {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.hero-image {
+    transform: translateX(30px);
+}
+
+/* Estado visible */
+.hero.animate .hero-text,
+.hero.animate .hero-image {
+    opacity: 1;
+    transform: translate(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-text,
+    .hero-image {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-text,
+    .hero-image {
+        transition-duration: 0.4s;
+    }
+}
 
 /* =====================================================
    HERO SUBTÍTULO
